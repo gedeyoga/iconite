@@ -15,7 +15,7 @@
   font-family: "raleway-light";
 }
 
-$primary-color: #3da2ff;
+$primary-color: #98181c;
 $heading-1: 36px;
 $heading-2: 32px;
 $heading-3: 24px;
@@ -28,10 +28,10 @@ h3 {
   font-family: "raleway-bold";
 }
 h2 {
-  font-size: $heading-1 !important;
+  font-size: $heading-1 ;
 }
 h3 {
-  font-size: $heading-2 !important;
+  font-size: $heading-2 ;
 }
 
 .btn {
@@ -44,10 +44,14 @@ h3 {
 }
 .btn-border {
   background-color: rgba(0, 0, 0, 0) !important;
-  border: 1px solid $primary-color;
+  border: 1px solid $primary-color !important;
 
   svg {
     margin-right: 5px;
+    
+    path{
+      fill: $primary-color;
+    }
   }
 
   &:hover {
@@ -98,7 +102,6 @@ header {
   position: relative;
   width: 100%;
   min-height: 650px;
-  background-color: red;
 
   .hero-content {
     width: 100%;
@@ -335,13 +338,20 @@ header {
   }
 
   @media (max-width: 767.98px) {
+    h2 {
+      font-size: 20px !important;
+    }
+    h3 {
+      font-size: 16px !important;
+    }
+
     .timeline::after {
-      left: 45px;
+      left: 15px;
     }
 
     .container-timeline {
       width: 100%;
-      padding-left: 87px;
+      padding-left: 30px;
       padding-right: 30px;
     }
 
@@ -351,12 +361,12 @@ header {
 
     .container-timeline.left::after,
     .container-timeline.right::after {
-      left: 37px;
+      left: 7px;
     }
 
     .container-timeline.left::before,
     .container-timeline.right::before {
-      left: 52px;
+      left: 9px;
       border-color: transparent $primary-color transparent transparent;
     }
 
@@ -368,14 +378,17 @@ header {
 
     .container-timeline.left .icon,
     .container-timeline.right .icon {
+      height: 25px;
       right: auto;
-      left: 100px;
+      left: 41px;
+      width: 25px;
+      top: calc(50% - 12px);
     }
 
     .container-timeline.left .content,
     .container-timeline.right .content {
-      padding: 30px 30px 30px 70px;
-      border-radius: 500px 0 0 500px;
+      padding: 30px 30px 30px 50px;
+      border-radius: 0;
     }
   }
 }
@@ -384,7 +397,7 @@ header {
         width: 100%;
         height: 100%;
         padding: 10px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(152, 24, 28 , 0.9) !important;;
         position: absolute;
     }
 
@@ -397,8 +410,18 @@ header {
     .card {
         .card-body {
             min-height: 595px;
+
+            svg {
+              path{
+                fill: $primary-color !important;
+              }
+            }
         }
     }
+}
+
+.publishing{
+  background-color: #f3f3f3;
 }
 
 .obtained , .registration , .committee{
@@ -438,6 +461,12 @@ header {
             list-style: none;
         }
     }
+
+    svg {
+      path{
+        fill: $primary-color ;
+      }
+    }
 }
 
 .committee {
@@ -453,4 +482,84 @@ header {
             }
         }
     }
+}
+
+footer {
+  background-color: #252525;
+
+  ul {
+    padding-left: 0 !important;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+
+.countdown{
+  background-color: $primary-color;
+}
+
+#countdown {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#countdown ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+#countdown ul li {
+  flex: 25%;
+  padding: 10%;
+  margin: 0;
+  list-style: none;
+  border-radius: 5px;
+}
+#countdown ul li mark{
+  display: block;
+  font-size: 3rem;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+del {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #countdown {
+    max-width: 500px;
+  }
+
+  .download{
+    img {
+      width: 130px;
+    }
+  }
+
+  .activities ul li {
+    max-width: 250px;
+  }
+  #countdown ul {
+    padding: 0;
+    display: flex;
+    gap: 5%;
+  }
+  #countdown ul li {
+    flex: 5%;
+    padding: 5%;
+    margin: 0;
+    list-style: none;
+    border-radius: 5px;
+  }
+  #countdown ul li mark {
+    display: block;
+    font-size: 1.5rem;
+  }
 }
